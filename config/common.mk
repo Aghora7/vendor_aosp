@@ -147,7 +147,12 @@ PRODUCT_PACKAGES += \
     QStileCircleTrim \
     QStileDefault \
     QStileDualToneCircle \
-    QStileSquircleTrim
+    QStileSquircleTrim \
+    QStileAttemptMountain \
+    QStileDottedCircle \
+    QStileNinja \
+    QStilePokesign \
+    QStileWavey
     
 # StorageManager configuration
 PRODUCT_PRODUCT_PROPERTIES += \
