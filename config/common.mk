@@ -152,7 +152,8 @@ PRODUCT_PACKAGES += \
     QStileDottedCircle \
     QStileNinja \
     QStilePokesign \
-    QStileWavey
+    QStileWavey \
+    QStileSquaremedo
     
 # StorageManager configuration
 PRODUCT_PRODUCT_PROPERTIES += \
