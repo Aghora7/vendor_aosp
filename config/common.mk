@@ -95,6 +95,10 @@ PRODUCT_PACKAGES += \
     GVM-URM-L \
     GVM-URM-R
 
+# Gaming mode
+PRODUCT_PACKAGES += \
+    GamingMode \
+    
 # Storage manager
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.storage_manager.enabled=true
