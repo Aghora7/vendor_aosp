@@ -50,3 +50,5 @@ losp: otapkg
 	@echo -e ${CL_BLD}${CL_YLW}"MD5: "${CL_YLW}" `cat $(TARGET_PACKAGE)-$(shell $(DATE_FROM_FILE) +%Y%m%d-%H%M).zip.md5sum | awk '{print $$1}' `"${CL_RST}
 	@echo -e ${CL_BLD}${CL_YLW}"Size:"${CL_YLW}" `du -sh $(TARGET_PACKAGE)-$(shell $(DATE_FROM_FILE) +%Y%m%d-%H%M).zip | awk '{print $$1}' `"${CL_RST}
 	@echo -e ${CL_BLD}${CL_RED}"================================================================================================"${CL_RST}
+	$(hide) ./vendor/aosp/tools/generate_json_build_info.sh $(CUSTOM_TARGET_PACKAGE)	
+	@echo "Package Complete: $(CUSTOM_TARGET_PACKAGE)" >&2
