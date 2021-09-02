@@ -87,7 +87,8 @@ PRODUCT_PACKAGES += \
     MusicPlayerGO \
     Recorder \
     ExactCalculator \
-    Etar
+    Etar \
+    DevicePersonalizationPrebuiltPixel2020
 
 # SystemUI plugins
 PRODUCT_PACKAGES += \
@@ -128,7 +129,8 @@ PRODUCT_PACKAGES += \
     ThemePicker
 # Pixel sysconfig
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/etc/sysconfig/pixel.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel.xml
+    vendor/aosp/prebuilt/common/etc/sysconfig/pixel.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel.xml \
+    vendor/aosp/prebuilt/common/etc/permissions/privapp-permissions-google.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-google.xml
 endif
 
 # Extra tools
