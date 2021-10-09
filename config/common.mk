@@ -102,6 +102,10 @@ PRODUCT_PACKAGES += \
     HideCutout \
     StatusBarStock
 
+PRODUCT_PACKAGES += \
+    NoCutoutOverlay \
+    AvoidAppsInCutoutOverlay
+
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
