@@ -212,7 +212,7 @@ SELINUX_IGNORE_NEVERALLOWS ?= true
 #    StitchImage
 
 # ThemeOverlays
-#include packages/overlays/Themes/themes.mk
+include packages/overlays/Themes/themes.mk
 
 # Recommend using the non debug dexpreopter
 USE_DEX2OAT_DEBUG := false
