@@ -55,7 +55,7 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
 
 # Enforce privapp-permissions whitelist
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+#PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=enforce
 
 # Power whitelist
@@ -83,7 +83,7 @@ PRODUCT_PACKAGES += \
     mount.ntfs
 
 # Config
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     SimpleDeviceConfig
 
 # GVM
@@ -198,7 +198,7 @@ TARGET_SUPPORTS_GOOGLE_RECORDER ?= true
 TARGET_INCLUDE_STOCK_ARCORE ?= true
 
 # Face Unlock
-TARGET_FACE_UNLOCK_SUPPORTED ?= true
+TARGET_FACE_UNLOCK_SUPPORTED ?= false
 ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
 PRODUCT_PACKAGES += \
     FaceUnlockService
@@ -218,7 +218,7 @@ $(call inherit-product, vendor/aosp/config/bootanimation.mk)
 $(call inherit-product, vendor/aosp/config/fonts.mk)
 
 # GApps
-$(call inherit-product, vendor/gapps/config.mk)
+#$(call inherit-product, vendor/gapps/config.mk)
 
 # OTA
 $(call inherit-product, vendor/aosp/config/ota.mk)
