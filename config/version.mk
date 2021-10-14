@@ -13,12 +13,12 @@
 # limitations under the License.
 
 #Extended Versioning
-EXTENDED_VERSION = v9.0
-EXTENDED_BUILD_TYPE := UNOFFICIAL
+LESSAOSP_VERSION = Snowcone-A
+LESSAOSP_BUILD_TYPE := UNOFFICIAL
 
-ifeq ($(EXTENDED_BUILD_TYPE), OFFICIAL)
+ifeq ($(LESSAOSP_BUILD_TYPE), OFFICIAL)
 
-# AEXOTA
+# LOSPOTA
 $(call inherit-product-if-exists, vendor/aosp/config/ota.mk)
 
 endif

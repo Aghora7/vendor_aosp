@@ -30,11 +30,11 @@ import urllib.request
 DEBUG = False
 default_manifest = ".repo/manifest.xml"
 
-custom_local_manifest = ".repo/local_manifests/aex_manifest.xml"
-custom_default_revision = "11.x"
+custom_local_manifest = ".repo/local_manifests/losp_manifest.xml"
+custom_default_revision = "12.x"
 custom_dependencies = "aosp.dependencies"
-org_manifest = "aex-devices"  # leave empty if org is provided in manifest
-org_display = "AospExtended-Devices"  # needed for displaying
+org_manifest = "losp-devices"  # leave empty if org is provided in manifest
+org_display = "LESSAOSP-Devices"  # needed for displaying
 
 github_auth = None
 

@@ -48,7 +48,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Exclude RRO Enforcement
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS +=  \
-    vendor/aosp/overlay
+    vendor/aosp/overlay/common
 
 # Enable one-handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -83,7 +83,6 @@ PRODUCT_PACKAGES += \
     VisualizationWallpapers \
     librs_jni \
     Stk \
-    AEXPapers \
     DuckDuckGo \
     MusicPlayerGO \
     Recorder \
@@ -117,6 +116,12 @@ PRODUCT_PACKAGES += \
     ImmersiveNavigationOverlay
 
 ifneq ($(WITH_GAPPS),true)
+PRODUCT_PACKAGES += \
+    Launcher3QuickStep
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    Launcher3QuickStep
+PRODUCT_PACKAGES += \
+    ThemePicker
 # Pixel sysconfig
 PRODUCT_COPY_FILES += \
     vendor/aosp/prebuilt/common/etc/sysconfig/pixel.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel.xml
@@ -162,7 +167,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/aosp/prebuilt/common/etc/init.d/00banner:$(TARGET_COPY_OUT_SYSTEM)/etc/init.d/00banner
 
-# AEX-specific init files
+# LOSP-specific init files
 $(foreach f,$(wildcard vendor/aosp/prebuilt/common/etc/init/*.rc),\
     $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
@@ -188,10 +193,10 @@ PRODUCT_PACKAGES += \
     charger_res_images
 
 # Pixel charger images
-ifeq ($(USE_PIXEL_CHARGER_IMAGES),true)
-PRODUCT_PACKAGES += \
-    product_charger_res_images
-endif
+#ifeq ($(USE_PIXEL_CHARGER_IMAGES),true)
+#PRODUCT_PACKAGES += \
+#   product_charger_res_images
+#endif
 
 # Selinux
 SELINUX_IGNORE_NEVERALLOWS ?= true
@@ -202,9 +207,6 @@ PRODUCT_PACKAGES += \
 
 # ThemeOverlays
 #include packages/overlays/Themes/themes.mk
-
-PRODUCT_PACKAGES += \
-    ThemePicker
 
 # Recommend using the non debug dexpreopter
 USE_DEX2OAT_DEBUG := false

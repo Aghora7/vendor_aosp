@@ -27,22 +27,23 @@ else
 MD5:=md5sum
 endif
 
-TARGET_PACKAGE := $(PRODUCT_OUT)/AospExtended-$(EXTENDED_VERSION)-$(TARGET_DEVICE)-$(EXTENDED_BUILD_TYPE)
+TARGET_PACKAGE := $(PRODUCT_OUT)/LESSAOSP-$(LESSAOSP_VERSION)-$(TARGET_DEVICE)-$(LESSAOSP_BUILD_TYPE)
 
-.PHONY: otapkg bacon aex
+.PHONY: otapkg bacon losp
 otapkg: $(INTERNAL_OTA_PACKAGE_TARGET)
-bacon: aex
-aex: otapkg
+bacon: losp
+losp: otapkg
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(TARGET_PACKAGE)-$(shell $(DATE_FROM_FILE) +%Y%m%d-%H%M).zip
 	$(hide) $(MD5) $(TARGET_PACKAGE)-$(shell $(DATE_FROM_FILE) +%Y%m%d-%H%M).zip > $(TARGET_PACKAGE)-$(shell $(DATE_FROM_FILE) +%Y%m%d-%H%M).zip.md5sum
 	@echo -e ${CL_RST} ""
-	@echo -e ${CL_RST} " ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄    ▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄    ▄ ▄▄▄▄▄▄  ▄▄▄▄▄▄▄ ▄▄▄▄▄▄  "
-	@echo -e ${CL_RST} "█       █       █       █       █  █       █  █▄█  █       █       █  █  █ █      ██       █      █ "
-	@echo -e ${CL_RST} "█   ▄   █   ▄   █  ▄▄▄▄▄█    ▄  █  █    ▄▄▄█       █▄     ▄█    ▄▄▄█   █▄█ █  ▄    █    ▄▄▄█  ▄    █"
-	@echo -e ${CL_RST} "█  █▄█  █  █ █  █ █▄▄▄▄▄█   █▄█ █  █   █▄▄▄█       █ █   █ █   █▄▄▄█       █ █ █   █   █▄▄▄█ █ █   █"
-	@echo -e ${CL_RST} "█       █  █▄█  █▄▄▄▄▄  █    ▄▄▄█  █    ▄▄▄██     █  █   █ █    ▄▄▄█  ▄    █ █▄█   █    ▄▄▄█ █▄█   █"
-	@echo -e ${CL_RST} "█   ▄   █       █▄▄▄▄▄█ █   █      █   █▄▄▄█   ▄   █ █   █ █   █▄▄▄█ █ █   █       █   █▄▄▄█       █"
-	@echo -e ${CL_RST} "█▄▄█ █▄▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄█      █▄▄▄▄▄▄▄█▄▄█ █▄▄█ █▄▄▄█ █▄▄▄▄▄▄▄█▄█  █▄▄█▄▄▄▄▄▄██▄▄▄▄▄▄▄█▄▄▄▄▄▄█ "
+	@echo -e ${CL_RST} "----------------------------------------------"
+	@echo -e ${CL_RST} " __          _ _ _ _ _   _ _ _ __   _ _ _ __  "
+	@echo -e ${CL_RST} "|  |        |   _ _   | |   _ _ _| |   ___  | "
+	@echo -e ${CL_RST} "|  |   By   |  |   |  | |  |_ _ _  |  |___| | "
+	@echo -e ${CL_RST} "|  |Aghora7 |  |   |  | |_ _ _   | |   _ _ _| "
+	@echo -e ${CL_RST} "|  |______  |  |_ _|  |  _ _ _|  | |  |       "
+	@echo -e ${CL_RST} "|_ _ _ _ _| |_ _ _ _ _| |_ _ _ __| |__|       "
+	@echo -e ${CL_RST} "----------------------------------------------"
 	@echo -e ${CL_RST} "" ${CL_RST}
 	@echo -e ${CL_BLD}${CL_RED}"=======================================-Package complete-======================================="${CL_RED}
 	@echo -e ${CL_BLD}${CL_YLW}"Zip: "${CL_YLW} $(TARGET_PACKAGE)-$(shell $(DATE_FROM_FILE) +%Y%m%d-%H%M).zip ${CL_RST}

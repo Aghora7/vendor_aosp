@@ -1,7 +1,7 @@
 function __print_aosp_functions_help() {
 cat <<EOF
 Additional AOSP functions:
-- gerrit:          Adds a remote for AEX Gerrit
+- gerrit:          Adds a remote for LOSP Gerrit
 EOF
 }
 
