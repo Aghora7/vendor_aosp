@@ -212,7 +212,7 @@ PRODUCT_PACKAGES += \
 USE_DEX2OAT_DEBUG := false
 
 # Enable ccache
-USE_CCACHE := true
+#USE_CCACHE := true
 
 # GoogleCameraGo
 ifneq ($(TARGET_SHIP_GCAM_GO),false)
