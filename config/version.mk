@@ -13,7 +13,7 @@
 # limitations under the License.
 
 #Extended Versioning
-LESSAOSP_VERSION = Snowcone-A
+LESSAOSP_VERSION = 1.0
 LESSAOSP_BUILD_TYPE ?= UNOFFICIAL
 LESSAOSP_PLATFORM_VERSION = twelve
 
