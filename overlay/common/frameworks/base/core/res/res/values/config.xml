@@ -257,9 +257,6 @@
     -->
     <string name="config_defaultContentSuggestionsService" translatable="false">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentSuggestionsService</string>
 
-    <!-- Face detection for screen auto rotation -->
-    <string name="config_defaultRotationResolverService" translatable="false">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiRotationResolverService</string>
-
     <!-- The component name for the system-wide captions service.
          This service must be trusted, as it controls part of the UI of the volume bar.
          Example: "com.android.captions/.SystemCaptionsService"
@@ -288,36 +285,4 @@
     <!-- Whether this device is supporting the camera toggle -->
     <bool name="config_supportsCamToggle">true</bool>
 
-    <!-- Control the behavior when the user long presses the power button.
-            0 - Nothing
-            1 - Global actions menu
-            2 - Power off (with confirmation)
-            3 - Power off (without confirmation)
-            4 - Go to voice assist
-            5 - Go to assistant (Settings.Secure.ASSISTANT)
-    -->
-    <integer name="config_longPressOnPowerBehavior">1</integer>
-
-    <!-- Control the behavior when the user presses the power and volume up buttons together.
-            0 - Nothing
-            1 - Mute toggle
-            2 - Global actions menu
-    -->
-    <integer name="config_keyChordPowerVolumeUp">1</integer>
-
-    <!-- Wallpaper cropper package. Used as the default cropper if the active launcher doesn't
-         handle wallpaper cropping.
-    -->
-    <string name="config_wallpaperCropperPackage" translatable="false">com.android.wallpaper</string>
-
-    <!-- Exempt AiAi from privacy indicators -->
-    <string name="config_systemAmbientAudioIntelligence">com.google.android.as</string>
-    <string name="config_systemAudioIntelligence">com.google.android.as</string>
-    <string name="config_systemNotificationIntelligence">com.google.android.as</string>
-    <string name="config_systemTextIntelligence">com.google.android.as</string>
-    <string name="config_systemUiIntelligence">com.google.android.as</string>
-    <string name="config_systemVisualIntelligence">com.google.android.as</string>
-
-    <!-- the number of the max cached processes in the system. -->
-    <integer name="config_customizedMaxCachedProcesses">64</integer>
 </resources>
