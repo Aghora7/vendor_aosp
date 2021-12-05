@@ -1,5 +1,5 @@
 // Copyright 2015 Google Inc. All rights reserved.
-// Copyright (C) 2018,2021 The LineageOS Project
+// Copyright (C) 2018 The LineageOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -29,6 +29,8 @@ import (
 
 func init() {
 	android.RegisterModuleType("aosp_generator", GeneratorFactory)
+
+	pctx.HostBinToolVariable("sboxCmd", "sbox")
 }
 
 var String = proptools.String
@@ -275,26 +277,14 @@ func (g *Module) GenerateAndroidBuildActions(ctx android.ModuleContext) {
 		return
 	}
 
-	// Dummy output dep
-	dummyDep := android.PathForModuleGen(ctx, ".dummy_dep")
-
-	genDir := android.PathForModuleGen(ctx)
-	manifestPath := android.PathForModuleOut(ctx, "generator.sbox.textproto")
-
-	// Use a RuleBuilder to create a rule that runs the command inside an sbox sandbox.
-	rule := android.NewRuleBuilder(pctx, ctx).Sbox(genDir, manifestPath).SandboxTools()
-
-	rule.Command().
-		Text(rawCommand).
-		ImplicitOutput(dummyDep).
-		Implicits(g.inputDeps).
-		Implicits(g.implicitDeps)
-
-	rule.Command().Text("touch").Output(dummyDep)
+	cmd.Text(rawCommand)
+	cmd.ImplicitOutput(dummyDep)
+	cmd.Implicits(g.inputDeps)
+	cmd.Implicits(g.implicitDeps)
 
 	g.outputDeps = append(g.outputDeps, dummyDep)
 
-	rule.Build("generator", "generate")
+	rule.Build(name, desc)
 }
 
 func NewGenerator() *Module {
