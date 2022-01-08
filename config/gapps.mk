@@ -1,6 +1,6 @@
 ifeq ($(WITH_GAPPS),true)
 # Gapps
-$(call inherit-product, vendor/gapps/common/common-vendor.mk)
+$(call inherit-product, vendor/gapps/products/gapps.mk)
 
 # Common Overlay
 DEVICE_PACKAGE_OVERLAYS += \
