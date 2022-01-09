@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Gapps
-#$(call inherit-product, vendor/aosp/config/gapps.mk)
+$(call inherit-product, vendor/aosp/config/gapps.mk)
 
 include vendor/aosp/config/version.mk
 
