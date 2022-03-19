@@ -31,7 +31,6 @@ SOONG_CONFIG_aospGlobalVars += \
     additional_gralloc_10_usage_bits \
     bootloader_message_offset \
     camera_needs_client_info \
-    camera_needs_client_info_lib \
     disable_postrender_cleanup \
     has_legacy_camera_hal1 \
     has_memfd_backport \
@@ -65,7 +64,7 @@ SOONG_CONFIG_aospQcomVars += \
     uses_pre_uplink_features_netmgrd \
     uses_qcom_bsp_legacy \
     uses_qti_camera_device \
-    needs_camera_boottime_timestamp
+    needs_camera_boottime_timestamp \
 
 # Only create display_headers_namespace var if dealing with UM platforms to avoid breaking build for all other platforms
 ifneq ($(filter $(UM_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
